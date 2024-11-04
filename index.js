@@ -61,4 +61,33 @@ console.log(`Check if ${n4} is over 25 and the answer is ${isn4Over25}`);
 
 // Part 2: Practical Math
 
+const totalDistance = 1500;
+let budget = 175;
+const fuelCost = 3;
+// 50 gallon for 55 miles - ok - 27.27 hours
+// 53.57 gallon for 60 miles - ok - 25
+// 65.21 gallon for 75 miles - not ok - 20
+
+const tripCalculation = (speed, milePerGallon) => {
+  // Calculate gallon of fuel needed
+  let gallonNeed = totalDistance / milePerGallon;
+
+  //   Check if the budget is enough
+  let total = gallonNeed * fuelCost;
+  budgetResult = "";
+  if (budget >= total) {
+    budgetResult = "enough";
+  } else {
+    budgetResult = "not enough";
+  }
+
+  //   Calculate how long the trip will be
+  let hours = totalDistance / speed;
+  console.log(
+    `At ${speed} miles per hour, you need ${gallonNeed} gallon of fuel. You need to pay $${total} for your gas, which means you have ${budgetResult} budget. Also, it will take ${hours} hours to your destination`
+  );
+};
+
+tripCalculation(55, 30);
+
 // Part 3: Future Exploration
